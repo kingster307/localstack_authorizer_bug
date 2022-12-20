@@ -1,0 +1,58 @@
+version: "3.8"
+
+services:
+  localstack:
+    container_name: "localstack"
+    image: localstack/localstack-pro:latest
+    networks:
+      - devnet
+    ports:
+      - "4566:4566"            # LocalStack Gateway
+      - "4510-4559:4510-4559"  # external services port range
+      - "53:53"                # DNS config (only required for Pro)
+      - "53:53/udp"            # DNS config (only required for Pro)
+      - "443:443"              # LocalStack HTTPS Gateway (only required for Pro)
+    environment:
+      - DEBUG=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DEFAULT_REGION=us-west-2
+      - LOCALSTACK_HOSTNAME=${LOCALSTACK_HOSTNAME}
+      - LAMBDA_DOCKER_NETWORK=devnet
+      - PROVIDER_OVERRIDE_S3=asf_pro
+      - PROVIDER_OVERRIDE_lambda=asf
+      - HOSTNAME_EXTERNAL=host.docker.internal
+      - LAMBDA_EXECUTOR=docker-reuse
+      - REQUIRE_PRO=1 # force it to fail if license activation fails
+      - LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY}
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./ls_volume}:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  auth0_mock:
+    container_name: "${AUTH0_CONTAINER_NAME-auth0_mock}"
+    stdin_open: true
+    tty: true
+    build:
+      context: ./tests/auth0_mock
+      dockerfile: Dockerfile
+    networks:
+      devnet:
+    ports:
+      - "${AUTH0_HOST_PORT-3001}:3001"
+    command: yarn run start
+    environment:
+      NODE_ENV: dev
+      DEBUG: nodejs-docker-express:*
+      AUTH0_DOMAIN:
+      AUTH0_AUDIENCE:
+      AUTH0_DEFAULT_USER:
+      AUTH0_DEFAULT_PASSWORD:
+
+networks:
+  devnet:
+    name: devnet
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "169.254.170.0/24"
+          gateway: 169.254.170.1

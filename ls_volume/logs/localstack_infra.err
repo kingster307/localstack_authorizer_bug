@@ -1,0 +1,923 @@
+2022-12-20T22:02:04.472 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='_patch_botocore_json_parser', value='localstack.aws.client:_patch_botocore_json_parser', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.475 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='_run_init_scripts_on_start', value='localstack.runtime.init:_run_init_scripts_on_start', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.478 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='deprecation_warnings', value='localstack.plugins:deprecation_warnings', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.478 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='register_partition_adjusting_proxy_listener', value='localstack.plugins:register_partition_adjusting_proxy_listener', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.478 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='add_aws_request_logger', value='localstack_ext.analytics.plugins:add_aws_request_logger', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.480 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='add_custom_edge_routes', value='localstack_ext.plugins:add_custom_edge_routes', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.484 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='add_iam_enforcement_listener', value='localstack_ext.services.iam.plugins:add_iam_enforcement_listener', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.485 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='add_legacy_iam_enforcement_listener', value='localstack_ext.services.iam.plugins:add_legacy_iam_enforcement_listener', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.485 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='deprecation_warnings_pro', value='localstack_ext.plugins:deprecation_warnings_pro', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.485 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='extensions_on_infra_start', value='localstack_ext.extensions.plugins:extensions_on_infra_start', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.485 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='init_stackinfo_handler', value='localstack_ext.services.internal.stackinfo.plugins:init_stackinfo_handler', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.486 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='register_public_pods_api', value='localstack_ext.persistence.plugins:register_public_pods_api', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.487 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='register_restricted_pods_api', value='localstack_ext.persistence.plugins:register_restricted_pods_api', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.487 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='register_state_serializer_handlers', value='localstack_ext.persistence.plugins:register_state_serializer_handlers', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.487 DEBUG --- [  MainThread] stevedore.extension        : found extension EntryPoint(name='setup_pro_infra', value='localstack_ext.plugins:setup_pro_infra', group='localstack.hooks.on_infra_start')
+2022-12-20T22:02:04.487 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start._patch_botocore_json_parser = <function _patch_botocore_json_parser at 0xffff7d81d090>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:_patch_botocore_json_parser
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start._run_init_scripts_on_start = <function _run_init_scripts_on_start at 0xffff7d81dea0>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:_run_init_scripts_on_start
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.deprecation_warnings = <function deprecation_warnings at 0xffff7d81e680>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:deprecation_warnings
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.register_partition_adjusting_proxy_listener = <function register_partition_adjusting_proxy_listener at 0xffff7d81e560>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : plugin localstack.hooks.on_infra_start:register_partition_adjusting_proxy_listener is disabled
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.add_aws_request_logger = <function add_aws_request_logger at 0xffff7d81e950>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:add_aws_request_logger
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.add_custom_edge_routes = <function add_custom_edge_routes at 0xffff7d84a200>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:add_custom_edge_routes
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.add_iam_enforcement_listener = <function add_iam_enforcement_listener at 0xffff7d84b1c0>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:add_iam_enforcement_listener
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.add_legacy_iam_enforcement_listener = <function add_legacy_iam_enforcement_listener at 0xffff7d84b010>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : plugin localstack.hooks.on_infra_start:add_legacy_iam_enforcement_listener is disabled
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.deprecation_warnings_pro = <function deprecation_warnings_pro at 0xffff7d84ab00>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:deprecation_warnings_pro
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.extensions_on_infra_start = <function extensions_on_infra_start at 0xffff7d84b520>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:extensions_on_infra_start
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.init_stackinfo_handler = <function init_stackinfo_handler at 0xffff7d84ba30>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:init_stackinfo_handler
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.register_public_pods_api = <function register_public_pods_api at 0xffff7d84beb0>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:register_public_pods_api
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.register_restricted_pods_api = <function register_restricted_pods_api at 0xffff7d84bd90>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:register_restricted_pods_api
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.register_state_serializer_handlers = <function register_state_serializer_handlers at 0xffff7d668040>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:register_state_serializer_handlers
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : instantiating plugin PluginSpec(localstack.hooks.on_infra_start.setup_pro_infra = <function setup_pro_infra at 0xffff7d84a7a0>)
+2022-12-20T22:02:04.488 DEBUG --- [  MainThread] plugin.manager             : loading plugin localstack.hooks.on_infra_start:setup_pro_infra
+2022-12-20T22:02:04.491 DEBUG --- [  MainThread] l.bootstrap.install        : Attempting to download local SSL certificate file
+2022-12-20T22:02:04.861 DEBUG --- [  MainThread] localstack.utils.http      : Starting download from https://github.com/localstack/localstack-artifacts/raw/master/local-certs/server.key to /var/lib/localstack/cache/server.test.pem (5243 bytes)
+2022-12-20T22:02:04.869 DEBUG --- [  MainThread] localstack.utils.http      : Done downloading https://github.com/localstack/localstack-artifacts/raw/master/local-certs/server.key, response code 200, total bytes 7738
+2022-12-20T22:02:06.091  INFO --- [  MainThread] l.bootstrap.licensing      : Successfully activated API key
+2022-12-20T22:02:06.321 DEBUG --- [  MainThread] l.a.p.service_router       : building service catalog index cache file /var/lib/localstack/cache/service-catalog-1_3_2_dev-1_27_96.pickle
+2022-12-20T22:02:08.595 DEBUG --- [  MainThread] localstack.utils.run       : Executing command: whoami
+2022-12-20T22:02:08.600 DEBUG --- [  MainThread] localstack.utils.run       : Executing command:  python -c "import sys; f=open(sys.argv[1]).read(); open(sys.argv[1], 'w').write('\n' + f)" /etc/resolv.conf
+2022-12-20T22:02:08.625 DEBUG --- [  MainThread] localstack.utils.run       : Executing command:  python -c "import sys; f=open(sys.argv[1]).read(); open(sys.argv[1], 'w').write('nameserver 0.0.0.0\n' + f)" /etc/resolv.conf
+2022-12-20T22:02:08.663 DEBUG --- [  MainThread] localstack.utils.run       : Executing command:  python -c "import sys; f=open(sys.argv[1]).read(); open(sys.argv[1], 'w').write('# The following line is required by LocalStack\n' + f)" /etc/resolv.conf
+2022-12-20T22:02:10.504 DEBUG --- [  MainThread] localstack.runtime.init    : Init scripts discovered: {BOOT: [], START: [], READY: [], SHUTDOWN: []}
+2022-12-20T22:02:10.505 DEBUG --- [  MainThread] localstack.plugins         : Checking for the usage of deprecated community features and configs...
+2022-12-20T22:02:10.505  WARN --- [  MainThread] localstack.deprecations    : DEFAULT_REGION is deprecated (since 0.12.7) and will be removed in upcoming releases of LocalStack! LocalStack now has full multi-region support. Please remove this environment variable.
+2022-12-20T22:02:10.513  WARN --- [  MainThread] l.services.internal        : Enabling diagnose endpoint, please be aware that this can expose sensitive information via your network.
+2022-12-20T22:02:10.958  INFO --- [  MainThread] l.extensions.platform      : loaded 0 extensions
+2022-12-20T22:02:10.958 DEBUG --- [  MainThread] l.extensions.platform      : calling extensions on_platform_start
+2022-12-20T22:02:10.958 DEBUG --- [  MainThread] l.extensions.platform      : calling extensions update_gateway_routes
+2022-12-20T22:02:10.958 DEBUG --- [  MainThread] l.extensions.platform      : calling extensions update_request_handlers
+2022-12-20T22:02:10.958 DEBUG --- [  MainThread] l.extensions.platform      : calling extensions update_response_handlers
+2022-12-20T22:02:10.958  INFO --- [  MainThread] l.u.aws.metadata_service   : Starting AWS instance metadata service on port 80
+2022-12-20T22:02:10.964  INFO --- [  MainThread] botocore.credentials       : Found credentials in environment variables.
+2022-12-20T22:02:10.964 DEBUG --- [  MainThread] localstack.utils.threads   : start_thread called without providing a custom name
+2022-12-20T22:02:10.971 DEBUG --- [-functhread2] l.bootstrap.install        : Using cached SSL certificate (less than 6hrs since last update).
+2022-12-20T22:02:11.118  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-20T22:02:11.118  WARN --- [-functhread3] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-20T22:02:11.123 DEBUG --- [-functhread2] l.bootstrap.install        : Using cached SSL certificate (less than 6hrs since last update).
+2022-12-20T22:02:11.135  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2022-12-20T22:02:11.135  INFO --- [-functhread3] hypercorn.error            : Running on https://0.0.0.0:4566 (CTRL + C to quit)
+2022-12-20T22:02:11.148  WARN --- [-functhread4] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-20T22:02:11.148  WARN --- [-functhread4] hypercorn.error            : ASGI Framework Lifespan error, continuing without Lifespan support
+2022-12-20T22:02:11.149  INFO --- [-functhread4] hypercorn.error            : Running on https://0.0.0.0:443 (CTRL + C to quit)
+2022-12-20T22:02:11.149  INFO --- [-functhread4] hypercorn.error            : Running on https://0.0.0.0:443 (CTRL + C to quit)
+2022-12-20T22:02:11.301 DEBUG --- [  MainThread] l.extensions.platform      : calling extensions on_platform_ready
+2022-12-20T22:02:21.635 DEBUG --- [uest_thread)] l.services.dns_server      : Determined fallback dns: 127.0.0.11
+2022-12-20T22:19:04.014 DEBUG --- [   asgi_gw_0] l.services.plugins         : checking service health iam:4566
+2022-12-20T22:19:04.117  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.CreateRole => 200
+2022-12-20T22:19:04.134  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.GetRole => 200
+2022-12-20T22:19:04.217  INFO --- [   asgi_gw_2] botocore.credentials       : Found credentials in environment variables.
+2022-12-20T22:19:04.276 DEBUG --- [   asgi_gw_2] l.services.plugins         : checking service health logs:4566
+2022-12-20T22:19:04.295  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS logs.CreateLogGroup => 200
+2022-12-20T22:19:04.307  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS logs.PutRetentionPolicy => 200
+2022-12-20T22:19:04.318  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS logs.DescribeLogGroups => 200
+2022-12-20T22:19:04.325 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:04.333  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:04.383 ERROR --- [   asgi_gw_2] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:04.384  INFO --- [   asgi_gw_2] localstack.request.http    : POST / => 500
+2022-12-20T22:19:04.513 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:04.513  INFO --- [   asgi_gw_1] localstack.utils.bootstrap : Execution of "require" took 572.96ms
+2022-12-20T22:19:04.521  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS iam.CreateRole => 200
+2022-12-20T22:19:04.522  INFO --- [   asgi_gw_4] localstack.utils.bootstrap : Execution of "require" took 581.34ms
+2022-12-20T22:19:04.527  INFO --- [   asgi_gw_3] localstack.utils.bootstrap : Execution of "require" took 593.60ms
+2022-12-20T22:19:04.528  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS iam.CreatePolicy => 200
+2022-12-20T22:19:04.530  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS iam.CreatePolicy => 200
+2022-12-20T22:19:04.532  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:04.569  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS iam.GetPolicy => 200
+2022-12-20T22:19:04.570  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS iam.GetRole => 200
+2022-12-20T22:19:04.576  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.ListRolePolicies => 200
+2022-12-20T22:19:04.578  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS iam.GetPolicy => 200
+2022-12-20T22:19:04.593  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS iam.GetPolicyVersion => 200
+2022-12-20T22:19:05.731  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:05.733  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.GetPolicyVersion => 200
+2022-12-20T22:19:05.734 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:05.738  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS iam.ListRolePolicies => 200
+2022-12-20T22:19:05.739  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:05.753  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:05.761  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS iam.AttachRolePolicy => 200
+2022-12-20T22:19:05.763  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.AttachRolePolicy => 200
+2022-12-20T22:19:05.772  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS iam.AttachRolePolicy => 200
+2022-12-20T22:19:05.773  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:05.774  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS iam.AttachRolePolicy => 200
+2022-12-20T22:19:05.775  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:05.806  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:05.807  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS iam.ListAttachedRolePolicies => 200
+2022-12-20T22:19:06.019 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:06.021  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:06.434 DEBUG --- [   asgi_gw_2] l.s.awslambda.urlrouter    : Registering parameterized Lambda routes.
+2022-12-20T22:19:06.435 DEBUG --- [   asgi_gw_2] l.services.plugins         : checking service health lambda:4566
+2022-12-20T22:19:06.618 DEBUG --- [   asgi_gw_4] l.services.plugins         : checking service health s3:4566
+2022-12-20T22:19:06.620 ERROR --- [   asgi_gw_1] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:06.622  INFO --- [   asgi_gw_1] localstack.request.http    : POST / => 500
+2022-12-20T22:19:07.019  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS lambda.CreateFunction => 201
+2022-12-20T22:19:07.031 DEBUG --- [Executor-1_0] l.s.a.i.docker_runtime_exe : Executing prepare docker executor pro-hook for function arn:aws:lambda:us-west-2:000000000000:function:apiGwAuthorizerLambda-0cdb8ae:$LATEST
+2022-12-20T22:19:07.031 DEBUG --- [Executor-1_0] l.s.a.i.lambda_models      : Saving code apiGwAuthorizerLambda-0cdb8ae-4aca90f5-5031-4af1-bad2-a93db334ae7d to disk
+2022-12-20T22:19:07.090 DEBUG --- [Executor-1_0] localstack.utils.run       : Executing command: ['unzip', '-o', '-q', '/tmp/tmp6b2berua']
+2022-12-20T22:19:07.691 ERROR --- [   asgi_gw_4] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:07.691  INFO --- [   asgi_gw_4] localstack.request.http    : POST / => 500
+2022-12-20T22:19:07.893 DEBUG --- [Executor-1_0] l.u.c.docker_sdk_client    : Pulling Docker image: public.ecr.aws/lambda/python:3.7
+2022-12-20T22:19:10.385 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:10.386  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:12.038  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:12.249  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:12.667  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:13.484  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:15.101  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:16.778 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:16.780  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:18.365  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:24.811  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:25.064 DEBUG --- [Executor-1_0] l.s.a.i.docker_runtime_exe : Version preparation of version arn:aws:lambda:us-west-2:000000000000:function:apiGwAuthorizerLambda-0cdb8ae:$LATEST took 18037.26ms
+2022-12-20T22:19:25.065 DEBUG --- [Executor-1_0] l.s.a.i.version_manager    : Lambda 'arn:aws:lambda:us-west-2:000000000000:function:apiGwAuthorizerLambda-0cdb8ae:$LATEST' (id 06b5fe8e) changed to active
+2022-12-20T22:19:25.389 ERROR --- [   asgi_gw_2] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:25.394  INFO --- [   asgi_gw_2] localstack.request.http    : POST / => 500
+2022-12-20T22:19:34.933  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:34.973  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:35.005  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.ListVersionsByFunction => 200
+2022-12-20T22:19:35.019  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.GetFunctionCodeSigningConfig => 200
+2022-12-20T22:19:35.097  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS logs.CreateLogGroup => 200
+2022-12-20T22:19:35.133  INFO --- [   asgi_gw_2] localstack.request.aws     : AWS lambda.CreateFunction => 201
+2022-12-20T22:19:35.137  INFO --- [   asgi_gw_3] localstack.request.aws     : AWS logs.PutRetentionPolicy => 200
+2022-12-20T22:19:35.137 DEBUG --- [Executor-1_0] l.s.a.i.docker_runtime_exe : Executing prepare docker executor pro-hook for function arn:aws:lambda:us-west-2:000000000000:function:s3OnObjectCreatedLambda-9c00690:$LATEST
+2022-12-20T22:19:35.139 DEBUG --- [Executor-1_0] l.s.a.i.lambda_models      : Saving code s3OnObjectCreatedLambda-9c00690-ce1b1b24-e752-4d91-b85e-79d90e1657e3 to disk
+2022-12-20T22:19:35.168  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS logs.DescribeLogGroups => 200
+2022-12-20T22:19:35.174 DEBUG --- [Executor-1_0] localstack.utils.run       : Executing command: ['unzip', '-o', '-q', '/tmp/tmpiupw_2uy']
+2022-12-20T22:19:35.182 DEBUG --- [Executor-1_0] l.s.a.i.docker_runtime_exe : Version preparation of version arn:aws:lambda:us-west-2:000000000000:function:s3OnObjectCreatedLambda-9c00690:$LATEST took 45.08ms
+2022-12-20T22:19:35.183 DEBUG --- [Executor-1_0] l.s.a.i.version_manager    : Lambda 'arn:aws:lambda:us-west-2:000000000000:function:s3OnObjectCreatedLambda-9c00690:$LATEST' (id 407f9d3b) changed to active
+2022-12-20T22:19:35.185 ERROR --- [   asgi_gw_1] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:35.187  INFO --- [   asgi_gw_1] localstack.request.http    : POST / => 500
+2022-12-20T22:19:35.265 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:35.267  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:35.378 ERROR --- [   asgi_gw_4] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:35.380  INFO --- [   asgi_gw_4] localstack.request.http    : POST / => 500
+2022-12-20T22:19:35.533 ERROR --- [   asgi_gw_1] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:35.535  INFO --- [   asgi_gw_1] localstack.request.http    : POST / => 500
+2022-12-20T22:19:35.895 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:35.896  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:36.799 ERROR --- [   asgi_gw_4] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:36.800  INFO --- [   asgi_gw_4] localstack.request.http    : POST / => 500
+2022-12-20T22:19:38.282 ERROR --- [   asgi_gw_1] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:38.290  INFO --- [   asgi_gw_1] localstack.request.http    : POST / => 500
+2022-12-20T22:19:40.179  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:40.198  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS lambda.GetFunction => 200
+2022-12-20T22:19:40.228  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS lambda.ListVersionsByFunction => 200
+2022-12-20T22:19:40.237  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.GetFunctionCodeSigningConfig => 200
+2022-12-20T22:19:40.488 DEBUG --- [   asgi_gw_1] l.s.apigateway.router_asf  : Registering parameterized API gateway routes.
+2022-12-20T22:19:40.493 DEBUG --- [   asgi_gw_1] l.services.plugins         : checking service health apigateway:4566
+2022-12-20T22:19:40.584  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS apigateway.CreateRestApi => 201
+2022-12-20T22:19:40.603  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS apigateway.PutRestApi => 200
+2022-12-20T22:19:40.617  INFO --- [   asgi_gw_4] l.s.apigateway.helpers     : Missing "value" in JSONPatch operation for {'id': 'fslkqh9dyt', 'account_id': '000000000000', 'region_name': 'us-west-2', 'name': 'apiGateway', 'description': None, 'version': 'V1', 'binaryMediaTypes': [], 'create_date': 1671574780, 'api_key_source': 'HEADER', 'policy': None, 'endpoint_configuration': {'types': ['EDGE']}, 'tags': {}, 'disableExecuteApiEndpoint': False, 'minimum_compression_size': None, 'deployments': {}, 'authorizers': {'7k5mnuqfe8': <moto.apigateway.models.Authorizer object at 0xffff1ce5ac50>}, 'gateway_responses': {}, 'stages': {}, 'resources': {'kt4vdc4ecy': <moto.apigateway.models.Resource object at 0xffff1ce5a9b0>, 'iufrrtkxyx': <moto.apigateway.models.Resource object at 0xffff1ce5a980>, 'lzg417dain': <moto.apigateway.models.Resource object at 0xffff1ce5abc0>}, 'models': {}, 'request_validators': {}, 'default': <moto.apigateway.models.Resource object at 0xffff1ce58bb0>}: {'op': 'add', 'path': '/binaryMediaTypes/needs_this_so_pulumi_does_not_add~1default_binary_media_type'}
+2022-12-20T22:19:40.618  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS apigateway.UpdateRestApi => 200
+2022-12-20T22:19:40.641  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS apigateway.GetRestApi => 200
+2022-12-20T22:19:40.643 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:40.647  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:40.660  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS apigateway.GetResources => 200
+2022-12-20T22:19:40.694  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS apigateway.CreateDeployment => 201
+2022-12-20T22:19:40.704  INFO --- [   asgi_gw_0] localstack.request.aws     : AWS apigateway.GetDeployment => 200
+2022-12-20T22:19:40.730  INFO --- [   asgi_gw_4] localstack.request.aws     : AWS lambda.AddPermission => 201
+2022-12-20T22:19:40.741  INFO --- [   asgi_gw_1] localstack.request.aws     : AWS lambda.GetPolicy => 200
+2022-12-20T22:19:45.452 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:45.467  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:19:54.488 ERROR --- [   asgi_gw_1] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:54.490  INFO --- [   asgi_gw_1] localstack.request.http    : POST / => 500
+2022-12-20T22:19:57.638 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:19:57.647  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500
+2022-12-20T22:20:23.046 ERROR --- [   asgi_gw_4] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:20:23.049  INFO --- [   asgi_gw_4] localstack.request.http    : POST / => 500
+2022-12-20T22:20:45.274 ERROR --- [   asgi_gw_4] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:20:45.277  INFO --- [   asgi_gw_4] localstack.request.http    : POST / => 500
+2022-12-20T22:20:58.853 ERROR --- [   asgi_gw_0] l.aws.handlers.logging     : exception during call chain
+Traceback (most recent call last):
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 362, in operation_model
+    model = self._service_description['operations'][operation_name]
+KeyError: 'ListTagsForResource'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 172, in wrapper
+    return func(*args, **kwargs)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 895, in parse
+    operation = self.service.operation_model(operation_name)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/utils.py", line 1419, in _cache_guard
+    result = func(self, *args, **kwargs)
+  File "/opt/code/localstack/.venv/lib/python3.10/site-packages/botocore/model.py", line 364, in operation_model
+    raise OperationNotFoundError(operation_name)
+botocore.model.OperationNotFoundError: ListTagsForResource
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/code/localstack/localstack/aws/chain.py", line 90, in handle
+    handler(self, self.context, response)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 63, in __call__
+    return self.parse_and_enrich(context)
+  File "/opt/code/localstack/localstack/aws/handlers/service.py", line 76, in parse_and_enrich
+    operation, instance = parser.parse(context.request)
+  File "/opt/code/localstack/localstack/aws/protocol/parser.py", line 176, in wrapper
+    raise UnknownParserError(
+localstack.aws.protocol.parser.UnknownParserError: An unknown error occurred when trying to parse the request.
+2022-12-20T22:20:58.855  INFO --- [   asgi_gw_0] localstack.request.http    : POST / => 500

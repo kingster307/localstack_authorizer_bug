@@ -1,0 +1,14 @@
+{
+  "kingster307": {
+    "username": "kingster307",
+    "pw": "kingster_test",
+    "permissions": ["just_do_it.run"],
+    "scope": "openid profile email",
+    "given_name": "John",
+    "family_name": "Doe",
+    "nickname":"JD",
+    "name":"John Doe",
+    "email":"john.doe@unknown.com",
+    "picture":"https://s.gravatar.com/avatar/4cf8395b3f38515aa3144ccef5a49800?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fjd.png"
+  },
+}
