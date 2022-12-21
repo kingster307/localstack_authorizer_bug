@@ -7,7 +7,7 @@
     "build": "tsc",
     "prestart": "yarn install && yarn run build",
     "start": "node .",
-    "cleanup": "rm -rf node_modules keys.json",
+    "cleanup": "rm -rf node_modules keys.json dist",
     "test": "jest",
     "test-dev": "jest --watch",
     "test-leaks": "jest --detectOpenHandles",
