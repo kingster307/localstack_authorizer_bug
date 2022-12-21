@@ -20,7 +20,7 @@ AWS_SECRET_ACCESS_KEY=test
 # build everything && install dependencies
 all: up install-iac-deps install-test-deps build-pulumi run-test
 # tears down everything
-cleanup: down reset-iac remove-test-deps
+cleanup: down reset-iac remove-test-deps clean-auth0-mock
 
 export AUTH0_AUDIENCE=test
 export AUTH0_DOMAIN=http://host.docker.internal:3001
@@ -53,6 +53,9 @@ build-pulumi: build-lambda
     		--plaintext aws_region=$(AWS_REGION) ; \
 	pulumi up -y -s $(STACK); \
 	pulumi stack output -s $(STACK) -j > ./../pulumi_output.json;
+
+clean-auth0-mock:
+	cd tests/auth0_mock && yarn run cleanup
 
 down:
 	docker-compose down -v; \
