@@ -2,3 +2,5 @@ coverage/*
 keys.json
 *.log
 *.lock
+dist
+node_modules

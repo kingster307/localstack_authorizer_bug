@@ -1,0 +1,4 @@
+ls_volume
+venv
+tests/.pytest_cache
+tests/__pycache__
