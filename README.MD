@@ -8,6 +8,8 @@
       1) hit apigw route that requires authorization
       2) route should return 'hello'
 
+2) run `make cleanup` for a fresh start
+
 ## Issue
 getting 'Authorizer' object is not subscriptable' when route is hit
 
