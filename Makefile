@@ -20,7 +20,7 @@ AWS_SECRET_ACCESS_KEY=test
 # build everything && install dependencies
 all: up install-iac-deps install-test-deps build-pulumi run-test
 # tears down everything
-cleanup: down reset-iac remove-test-deps clean-auth0-mock
+cleanup: down reset-iac remove-test-deps clean-auth0-mock delete-zips
 
 export AUTH0_AUDIENCE=test
 export AUTH0_DOMAIN=http://host.docker.internal:3001
@@ -59,7 +59,7 @@ clean-auth0-mock:
 
 down:
 	docker-compose down -v; \
-	docker system prune -f;
+	docker system prune -a --volumes -f;
 
 reset-iac:
 	rm pulumi_output.json || true; \
@@ -73,6 +73,9 @@ install-test-deps:
 	python3 -m pip install --upgrade pip;\
 	pip3 install -r requierments-test.txt;\
 	);
+
+delete-zips:
+	find . -type f -name '*.zip' -delete
 
 remove-test-deps:
 	rm -rf ./venv
