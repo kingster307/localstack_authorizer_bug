@@ -2,3 +2,4 @@ ls_volume
 venv
 tests/.pytest_cache
 tests/__pycache__
+pulumi_output.json
