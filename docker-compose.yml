@@ -29,7 +29,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
 
   auth0_mock:
-    container_name: "${AUTH0_CONTAINER_NAME-auth0_mock}"
+    container_name: "auth0_mock"
     stdin_open: true
     tty: true
     build:
@@ -38,7 +38,7 @@ services:
     networks:
       devnet:
     ports:
-      - "${AUTH0_HOST_PORT-3001}:3001"
+      - "3001:3001"
     command: yarn run start
     environment:
       NODE_ENV: dev
