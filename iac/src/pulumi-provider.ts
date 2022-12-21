@@ -17,7 +17,7 @@ PulumiUtil.awsProvider = new aws.Provider("localstack", {
     skipCredentialsValidation: true,
     skipMetadataApiCheck: true,
     skipRequestingAccountId: true,
-    s3ForcePathStyle: true,
+    s3UsePathStyle: true,
     accessKey: "test",
     secretKey: "test",
     region: REGION,

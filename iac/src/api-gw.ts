@@ -1,7 +1,6 @@
 import * as aws from '@pulumi/aws';
-import * as awsx from '@pulumi/awsx';
+import * as awsx from '@pulumi/awsx/classic';
 import * as pulumi from '@pulumi/pulumi';
-import * as lambdaAuthorizer from "@pulumi/awsx/apigateway/lambdaAuthorizer";
 import {apiGwAuthorizerLambda} from "./api-gw-authorizer";
 import {PulumiUtil} from './pulumi-provider'
 import {hello_lambda} from "./hello-lambda";
@@ -16,7 +15,7 @@ export const apiAccessLogGroup = new aws.cloudwatch.LogGroup(
   { provider: PulumiUtil.awsProvider }
 );
 
-const apiAuthorizers: lambdaAuthorizer.LambdaAuthorizer[] = [
+const apiAuthorizers: awsx.apigateway.LambdaAuthorizer[] = [
   awsx.apigateway.getTokenLambdaAuthorizer({
     authorizerName: "Auth0",
     handler: {
