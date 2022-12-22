@@ -6,7 +6,6 @@ from typing import Dict, List
 from aws_lambda_powertools import Logger
 from jwt import PyJWKClient, decode, get_unverified_header
 from jwt.algorithms import get_default_algorithms
-# from utils.policy_util import create_policy, create_statement
 
 logger: Logger = Logger()
 
@@ -200,3 +199,22 @@ def get_policy(policy_resource_base: str, decoded: dict, is_ws: bool) -> dict:
         [create_statement("Allow", resources, [default_action])],
         context,
     )
+
+
+def create_policy(principal_id: str, statements: list, context: dict) -> dict:
+    return {
+        "principalId": principal_id,
+        "policyDocument": {
+            "Version": "2012-10-17",
+            "Statement": statements,
+        },
+        "context": context,
+    }
+
+
+def create_statement(effect: str, resource: list, action: list) -> dict:
+    return {
+        "Effect": effect,
+        "Resource": resource,
+        "Action": action,
+    }
