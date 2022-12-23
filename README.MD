@@ -7,10 +7,12 @@
    2) flow of test 
       1) hit apigw route that requires authorization
       2) route should return 'hello'
+   3) test fails due to authorizer error
 
 2) run `make cleanup` for a fresh start
 
 ## Issue
 getting 'Authorizer' object is not subscriptable' when route is hit
+
 
 Tests [here](./tests/route_test.py)
