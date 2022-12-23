@@ -23,5 +23,6 @@ def get_pulumi_output():
 
 def test_test():
     res = format_res(requests.get(f"{get_pulumi_output()['endpoint']}/just_do_it"))
+    print(res)
     assert res["status"] == 200
     assert res["content"].decode("utf-8")  == "hello"
