@@ -3,10 +3,9 @@
 ## Getting started
 1) run `make all`
    1) make all will build everything, install deps, and run test
-      1) test will say pass since we aren't checking any returns
    2) flow of test 
       1) hit apigw route that requires authorization
-      2) route should return 'hello'
+      2) route should authorize request & invoke lambda returning 200 & content of 'hello'
    3) test fails due to authorizer error
 
 2) run `make cleanup` for a fresh start
