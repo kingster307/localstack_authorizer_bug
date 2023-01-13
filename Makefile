@@ -59,7 +59,7 @@ clean-auth0-mock:
 
 down:
 	docker-compose down -v; \
-	docker system prune -a --volumes -f;
+#	docker system prune -a --volumes -f;
 
 reset-iac:
 	rm pulumi_output.json || true; \
@@ -81,10 +81,17 @@ remove-test-deps:
 	rm -rf ./venv
 
 build-lambda:
-	cd auth0_authorizer_lambda && \
-	pip install --target ./package -r requirements.txt && \
-	cd package && \
-	zip -r ../auth0_authorizer.zip . && \
-	cd .. && \
-	zip auth0_authorizer.zip lambda_function.py && \
-	rm -rf package
+	docker build --platform=linux/amd64 --progress=plain -t auth0_authorizer_lambda auth0_authorizer_lambda/
+	docker create -it --name auth0_authorizer_lambda auth0_authorizer_lambda bash
+	docker cp auth0_authorizer_lambda:/usr/local/lhome/handler.zip ./auth0_authorizer_lambda/auth0_authorizer.zip
+	docker rm -f auth0_authorizer_lambda
+	docker image rm -f auth0_authorizer_lambda
+
+#build-lambda:
+#	cd auth0_authorizer_lambda && \
+#	pip install --target ./package -r requirements.txt && \
+#	cp lambda_function.py ./package/ && \
+#	cd package && \
+#	zip -r ../auth0_authorizer.zip * && \
+#	cd .. && \
+#	rm -rf package
