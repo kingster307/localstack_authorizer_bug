@@ -13,6 +13,7 @@ logger: Logger = Logger()
 @logger.inject_lambda_context
 def lambda_handler(event, context):
     logger.info(event)
+    logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!! In the authorizer now !!!!!!!!!!!!!!!!!!!!!!!!!!")
     try:
         # checks event props for errors && parse token from event
         token = parse_token_from_event(check_event_for_error(event))

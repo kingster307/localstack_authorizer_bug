@@ -2,13 +2,14 @@ import os
 import json
 import requests
 import pytest
+import logging
 
 
 def access_token():
     username = "kingster307"
     pw = "kingster_test"
     requests.get("http://localhost:3001/login", params={"username": username, "pw": pw})
-    token = requests.get("http://localhost:3001/access_token", {})
+    token = format_res(requests.get("http://localhost:3001/access_token", {}))["content"].decode("utf - 8")
     requests.get("http://localhost:3001/logout", {})
     return token
 
@@ -32,6 +33,7 @@ def get_pulumi_output():
         return json.load(read_file)
 
 def test_test():
+    logging.info(get_pulumi_output()['endpoint'])
     res = format_res(requests.get(f"{get_pulumi_output()['endpoint']}/just_do_it", headers={"Authorization": f"Bearer {access_token()}"}))
     print(res)
     assert res["status"] == 200
