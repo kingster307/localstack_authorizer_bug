@@ -6,3 +6,6 @@ pulumi_output.json
 .idea
 **/.idea
 **/**/.idea
+.DS_Store
+**/.DS_Store
+**/**/.DS_Store
