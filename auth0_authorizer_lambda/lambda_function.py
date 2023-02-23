@@ -102,7 +102,7 @@ def build_policy_resource_base(event: dict) -> str:
     slice_where = -3 if "type" in event and event["type"] == "TOKEN" else -1
     arn_pieces = re.split(":|/", method_arn)[:slice_where]
 
-    if len(arn_pieces) != 7:
+    if len(arn_pieces) != get_expected_arn_pieces("type" in event and event["type"] == "TOKEN", event):
         raise Exception("Invalid methodArn")
 
     # get last 2 elements & form string
@@ -219,3 +219,17 @@ def create_statement(effect: str, resource: list, action: list) -> dict:
         "Resource": resource,
         "Action": action,
     }
+
+
+# this is a patch for LS incorrect methodARN implementation - missing trailing slash when invoked through REST API
+def get_expected_arn_pieces(is_rest: bool, event: dict):  # pragma: no cover
+#     env_name = os.getenv("ENV", "dev")
+    if (
+#         env_name == "ls_local"
+#         and is_rest
+        is_rest
+    ):
+        arn_pieces_should_equal = 6
+    else:
+        arn_pieces_should_equal = 7
+    return arn_pieces_should_equal
