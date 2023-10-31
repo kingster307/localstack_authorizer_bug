@@ -36,5 +36,5 @@ def test_test():
     logging.info(get_pulumi_output()['endpoint'])
     res = format_res(requests.get(f"{get_pulumi_output()['endpoint']}/just_do_it", headers={"Authorization": f"Bearer {access_token()}"}))
     print(res)
-    assert res["status"] == 200
-    assert res["content"].decode("utf-8")  == "hello"
+    # principal ID should exist
+    assert "principalId" in res["content"]["authorizer"]

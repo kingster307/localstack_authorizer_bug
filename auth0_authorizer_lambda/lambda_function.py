@@ -1,7 +1,5 @@
 import json
 import os
-import re
-from typing import Dict, List
 
 from aws_lambda_powertools import Logger
 from jwt import PyJWKClient, decode, get_unverified_header
@@ -9,18 +7,16 @@ from jwt.algorithms import get_default_algorithms
 
 logger: Logger = Logger()
 
-
 @logger.inject_lambda_context
 def lambda_handler(event, context):
     logger.info(event)
-    logger.info("!!!!!!!!!!!!!!!!!!!!!!!!!! In the authorizer now !!!!!!!!!!!!!!!!!!!!!!!!!!")
     try:
         # checks event props for errors && parse token from event
         token = parse_token_from_event(check_event_for_error(event))
         # builds policy resource base | validates token | returns policy
         return get_policy(
             build_policy_resource_base(event),
-            validate_token(token),
+            check_token_for_error(validate_token(token)),
             "sec-websocket-protocol" in event["headers"],
         )
     except Exception as e:
@@ -86,32 +82,8 @@ def parse_token_from_event(event: dict) -> str:
 
 
 def build_policy_resource_base(event: dict) -> str:
-    """
-    build resource base for policy
-
-    takes original method_arn & strips off HTTP method && path
-
-    @param event: lambda event dict
-
-    @return: returns policy resource base 'arn:aws:action:region:accountId:apiId/apiStage/'
-    """
-
-    method_arn = event["methodArn"]
-
-    # if rest request we want the last 3 to be removed if WS we only want to remove last element
-    slice_where = -3 if "type" in event and event["type"] == "TOKEN" else -1
-    arn_pieces = re.split(":|/", method_arn)[:slice_where]
-
-    if len(arn_pieces) != 7:
-        raise Exception("Invalid methodArn")
-
-    # get last 2 elements & form string
-    last_element = arn_pieces[-2] + "/" + arn_pieces[-1] + "/"
-    # remove last 2 elements from list
-    arn_pieces = arn_pieces[: len(arn_pieces) - 2]
-    # add last element to arn pieces
-    arn_pieces.append(last_element)
-    return ":".join(arn_pieces)
+    # For route based permissions see commented out version
+    return "arn:aws:execute-api:*:*:*/*/*"  # override to allow all route keys
 
 
 def validate_token(token: str) -> dict:
@@ -148,58 +120,43 @@ def validate_token(token: str) -> dict:
         options={"verify_signature": True},
     )
 
+
+def check_token_for_error(decoded_verified_jwt: dict) -> dict:
+    """
+    checks verified jwt for errors
+
+    @param decoded_verified_jwt: decoded verified jwt
+
+    @return: returns token
+    """
+    if "sub" not in decoded_verified_jwt:
+        raise Exception("Invalid token. No sub found")
+
+    if "scope" not in decoded_verified_jwt:
+        raise Exception("Invalid token. No scope found")
+
+    return decoded_verified_jwt
+
+
 def get_policy(policy_resource_base: str, decoded: dict, is_ws: bool) -> dict:
-    """
-    builds the policy to be returned to apigw
-
-    @param is_ws: True | False if websocket connection or not
-    @param policy_resource_base: resource base for policy
-    @param decoded: decoded & verified jwt token
-
-    @return: returns policy
-    """
-    auth_mappings: Dict[str : List[dict]] = {
-        "just_do_it.run": [
-            {"resourcePath": "/just_do_it/", "method": "GET"},
-        ],
-    }
-
-    resources = []
-    user_permissions = decoded.get("permissions", [])
-    default_action = "execute-api:Invoke"
-
-    # loop over auth_mappings
-    for perms, endpoints in auth_mappings.items():
-        # loop over user permissions & look for matches
-        if perms in user_permissions or perms == "principalId":
-            # loop over auth_mappings endpoints & create statements for each & append to statement list
-            for endpoint in endpoints:
-                # rest apigw policy build
-                if "method" in endpoint and "resourcePath" in endpoint and not is_ws:
-                    url_build = (
-                        policy_resource_base
-                        + endpoint["method"]
-                        + endpoint["resourcePath"]
-                    )
-                # ws apigw policy build
-                elif "routeKey" in endpoint and is_ws:
-                    url_build = policy_resource_base + endpoint["routeKey"]
-                # default to error | prob don't need this but better safe than sorry
-                else:
-                    continue
-                resources.append(url_build)
-
-    # create context from token props
+    # For route based permissions see commented out version
     context = {
         "scope": decoded["scope"],
         "permissions": json.dumps(decoded.get("permissions", [])),
     }
-    # create & return policy
     return create_policy(
         decoded["sub"],
-        [create_statement("Allow", resources, [default_action])],
+        [create_statement("Allow", policy_resource_base, "execute-api:Invoke")],
         context,
     )
+
+
+def create_statement(effect: str, resource: list, action: list) -> dict:
+    return {
+        "Effect": effect,
+        "Resource": resource,
+        "Action": action,
+    }
 
 
 def create_policy(principal_id: str, statements: list, context: dict) -> dict:
@@ -213,9 +170,103 @@ def create_policy(principal_id: str, statements: list, context: dict) -> dict:
     }
 
 
-def create_statement(effect: str, resource: list, action: list) -> dict:
-    return {
-        "Effect": effect,
-        "Resource": resource,
-        "Action": action,
-    }
+# ================================
+# TODO this approach limits access to routes for given permission
+# ==============================================================================================================================
+# def get_policy(policy_resource_base: str, decoded: dict, is_ws: bool) -> dict:
+#     """
+#     builds the policy to be returned to apigw
+#
+#     @param is_ws: True | False if websocket connection or not
+#     @param policy_resource_base: resource base for policy
+#     @param decoded: decoded & verified jwt token
+#
+#     @return: returns policy
+#     """
+#     auth_mappings: Dict[str : List[dict]] = {
+#         "principalId": [{"resourcePath": "/tasks/", "method": "GET"}],
+#         "reports.run": [
+#             {"resourcePath": "/download/", "method": "GET"},
+#             {"resourcePath": "/etl_status/", "method": "GET"},
+#             {"resourcePath": "/reports/", "method": "GET"},
+#         ],
+#         "fuel_price.update": [
+#             {"resourcePath": "/fuel_price_upload/", "method": "GET"},
+#             {"resourcePath": "/ops_data_upload/", "method": "GET"},
+#             {"resourcePath": "/fuel_pricing/", "method": "*"},
+#         ],
+#         "chat.user": [
+#             {"routeKey": "$default"},
+#             {"routeKey": "$connect"},
+#             {"routeKey": "$disconnect"},
+#             {"routeKey": "ping"},
+#             {"routeKey": "hello"},
+#             {"routeKey": "chatMessage"},
+#         ],
+#     }
+#
+#     resources = []
+#     user_permissions = decoded.get("permissions", [])
+#     default_action = "execute-api:Invoke"
+#
+#     # loop over auth_mappings
+#     for perms, endpoints in auth_mappings.items():
+#         # loop over user permissions & look for matches
+#         if perms in user_permissions or perms == "principalId":
+#             # loop over auth_mappings endpoints & create statements for each & append to statement list
+#             for endpoint in endpoints:
+#                 # rest apigw policy build
+#                 if "method" in endpoint and "resourcePath" in endpoint and not is_ws:
+#                     url_build = (
+#                         policy_resource_base
+#                         + endpoint["method"]
+#                         + endpoint["resourcePath"]
+#                     )
+#                 # ws apigw policy build
+#                 elif "routeKey" in endpoint and is_ws:
+#                     url_build = policy_resource_base + endpoint["routeKey"]
+#                 # default to error | prob don't need this but better safe than sorry
+#                 else:
+#                     continue
+#                 resources.append(url_build)
+#
+#     # create context from token props
+#     context = {
+#         "scope": decoded["scope"],
+#         "permissions": json.dumps(decoded.get("permissions", [])),
+#     }
+#     # create & return policy
+#     return create_policy(
+#         decoded["sub"],
+#         [create_statement("Allow", resources, [default_action])],
+#         context,
+#     )
+# ==============================================================================================================================
+# ==============================================================================================================================
+# def build_policy_resource_base(event: dict) -> str:
+#     """
+#     build resource base for policy
+#
+#     takes original method_arn & strips off HTTP method && path
+#
+#     @param event: lambda event dict
+#
+#     @return: returns policy resource base 'arn:aws:action:region:accountId:apiId/apiStage/'
+#     """
+#
+#     method_arn = event["methodArn"]
+#
+#     # if rest request we want the last 3 to be removed if WS we only want to remove last element
+#     slice_where = -3 if "type" in event and event["type"] == "TOKEN" else -1
+#     arn_pieces = re.split(":|/", method_arn)[:slice_where]
+#
+#     if len(arn_pieces) != 7:
+#         raise Exception("Invalid methodArn")
+#
+#     # get last 2 elements & form string
+#     last_element = arn_pieces[-2] + "/" + arn_pieces[-1] + "/"
+#     # remove last 2 elements from list
+#     arn_pieces = arn_pieces[: len(arn_pieces) - 2]
+#     # add last element to arn pieces
+#     arn_pieces.append(last_element)
+#     return ":".join(arn_pieces)

@@ -6,8 +6,8 @@ import {
     lambdaLoggingPolicy
 } from './policies';
 
-export const helloLambdaRole = new aws.iam.Role(
-    "helloLambdaRole",
+export const testLambdaRole = new aws.iam.Role(
+    "testLambdaRole",
     {
         assumeRolePolicy: {
             Version: "2012-10-17",
@@ -25,34 +25,34 @@ export const helloLambdaRole = new aws.iam.Role(
     {provider: PulumiUtil.awsProvider}
 );
 
-const helloLambdaLoggingRoleAttachment =
+const testLambdaLoggingRoleAttachment =
     new aws.iam.RolePolicyAttachment(
-        "helloLambdaLoggingRoleAttachment",
+        "testLambdaLoggingRoleAttachment",
         {
-            role: helloLambdaRole.name,
+            role: testLambdaRole.name,
             policyArn: lambdaLoggingPolicy.arn,
         },
         {provider: PulumiUtil.awsProvider}
     );
 
-const helloLambdaExecPolicyRoleAttachment =
+const testLambdaExecPolicyRoleAttachment =
     new aws.iam.RolePolicyAttachment(
-        "helloLambdaExecPolicyRoleAttachment",
+        "testLambdaExecPolicyRoleAttachment",
         {
-            role: helloLambdaRole.name,
+            role: testLambdaRole.name,
             policyArn: lambdaExecPolicy.arn,
         },
         {provider: PulumiUtil.awsProvider}
     );
 
 
-export const hello_lambda = new aws.lambda.Function(
+export const test_lambda = new aws.lambda.Function(
     's3OnObjectCreatedLambda',
     {
         code: new pulumi.asset.AssetArchive({
-            "lambda_function.py": new pulumi.asset.FileAsset("../hello_lambda/lambda_function.py"),
+            "lambda_function.py": new pulumi.asset.FileAsset("../test_lambda/lambda_function.py"),
         }),
-        role: helloLambdaRole.arn,
+        role: testLambdaRole.arn,
         handler: 'lambda_function.lambda_handler',
         runtime: 'python3.7',
         memorySize: 128,
@@ -61,8 +61,8 @@ export const hello_lambda = new aws.lambda.Function(
     {
         provider: PulumiUtil.awsProvider,
         dependsOn: [
-            helloLambdaLoggingRoleAttachment,
-            helloLambdaExecPolicyRoleAttachment,
+            testLambdaLoggingRoleAttachment,
+            testLambdaExecPolicyRoleAttachment,
         ]
     }
 );

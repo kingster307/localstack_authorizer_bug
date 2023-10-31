@@ -1,5 +1,5 @@
 export * from './src/pulumi-provider'
 export * from './src/policies'
-export * from './src/hello-lambda'
+export * from './src/test-lambda'
 export * from './src/api-gw-authorizer'
 export * from './src/api-gw'

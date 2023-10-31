@@ -3,7 +3,7 @@ import * as awsx from '@pulumi/awsx/classic';
 import * as pulumi from '@pulumi/pulumi';
 import {apiGwAuthorizerLambda} from "./api-gw-authorizer";
 import {PulumiUtil} from './pulumi-provider'
-import {hello_lambda} from "./hello-lambda";
+import {test_lambda} from "./test-lambda";
 
 // create log group for api access
 export const apiAccessLogGroup = new aws.cloudwatch.LogGroup(
@@ -89,7 +89,7 @@ export const api = new awsx.apigateway.API(
   'apiGateway',
   {
     deploymentArgs: {
-      description: 'API testing onObjectCreated Localstack bug'
+      description: 'API testing'
     },
     routes: [
       // This enables CORS on all routes.
@@ -101,9 +101,8 @@ export const api = new awsx.apigateway.API(
       {
         path: '/just_do_it',
         method: 'GET',
-        apiKeyRequired: true,
         authorizers: apiAuthorizers,
-        eventHandler: hello_lambda
+        eventHandler: test_lambda
       },
     ],
     gatewayResponses: {
