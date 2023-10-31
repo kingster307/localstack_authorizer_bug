@@ -47,7 +47,7 @@ const testLambdaExecPolicyRoleAttachment =
 
 
 export const test_lambda = new aws.lambda.Function(
-    's3OnObjectCreatedLambda',
+    'test_lambda',
     {
         code: new pulumi.asset.AssetArchive({
             "lambda_function.py": new pulumi.asset.FileAsset("../test_lambda/lambda_function.py"),
